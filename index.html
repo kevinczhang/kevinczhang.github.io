@@ -1,7 +1,405 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+<!--[if IE 7 ]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
+
+    <head>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta charset="utf-8"/>
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Welcome to CZoom</title>
+
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" />
+        <link rel="stylesheet" href="css/jquery.fancybox-1.3.4.css" type="text/css" />
+
+        <!--[if lt IE 9]>
+                <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/jquery-1.6.1.min.js"><\/script>');</script>
+
+        <script src="js/jquery.smoothscroll.js"></script>
+        <script src="js/jquery.nivo.slider.pack.js"></script>
+        <script src="js/jquery.easing-1.3.pack.js"></script>
+        <script src="js/jquery.fancybox-1.3.4.pack.js"></script>
+        <script src="js/init.js"></script>
+
+    </head>
+
+    <body>
+
+        <!-- header-wrap -->
+        <div id="header-wrap">
+            <header>
+
+                <hgroup>
+                    <h1><a href="index.html">Chao Zone</a></h1>
+                    <h3>All about Chao Zhang</h3>
+                </hgroup>
+
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#technical-skills">Technical skills</a></li>
+                        <li><a href="#experience">Featured works</a></li>
+                        <li><a href="#education">Experiences</a></li>                        
+                        <li><a href="#more">Contact Me</a></li>
+                    </ul>
+                </nav>
+
+            </header>
+        </div>
+
+        <!-- content-wrap -->
+        <div class="content-wrap">
+
+            <!-- main -->
+            <section id="home">
+
+                <div class="intro-box">
+                    <h1>Welcome my friend!</h1>
+
+                    <p class="intro">Hello there! Welcome to <strong>CZoom</strong> to get to know about me, Chao Zhang. 
+                        Currently I am a Ph.D. student of <strong><a href="http://coitweb.uncc.edu/~ywang32/">Dr. Yu Wang</a></strong> 
+                        in Department of Computer Science at UNC Charlotte.</p> 
+                    <p class="intro"> I am enthusiastic about all kinds of applications of computer science theory in different fields. 
+                        My current research interests mainly focus on algorithm design for routing and localization problem 
+                        in Wireless Sensor NetWork(<strong>WSN</strong>), ad-hoc network and Delay Tolerant NetWork(<strong>DTN</strong>).</p>
+
+                    <p class="intro">Learn more about <a href="#technical-skills">what I can do</a> and even more about <a href="#education">what I have done</a> if you want to hire us on your next project.</p>
+
+                </div>
+
+                <div class="slider-wrapper">
+
+                    <div id="slider" class="nivoSlider">
+                        <img src="images/slides/slide1.png" width="383" height="198" alt="" />
+                        <img src="images/slides/slide2.png" width="383" height="198" alt="" />
+                        <img src="images/slides/slide3.png" width="383" height="198" alt="" title="#htmlcaption"/>
+                    </div>
+                    <div id="htmlcaption" class="nivo-html-caption">
+                        Group photo with <a href="http://www.cs.iit.edu/~xli/"><strong>Dr. Xiangyang Li</strong></a>.
+                    </div>
+                </div>
+
+                <div class="row no-bottom-margin">
+
+                    <section class="col">
+                        <h2>Algorithm and Data Structure</h2>
+
+                        <p>All the problems in Computer Science can be based on different suitable data structure and 
+                            efficient calculation algorithm since <strong>"Algorithms + Data Structures = Programs"
+                            </strong> (Dr. Niklaus Wirth, 1976) no matter how complex the problem can be.</p>
+                    </section>
+                    <section class="col mid">
+                        <h2>Computer Network</h2>
+
+                        <p>Nowadays most computers are connected through network to share varieties of data. By processing
+                            the data collections, many "gold information" can found to make our world smarter. All kinds of 
+                            Web Services and Web-based applications are developed to accomplish different projects.</p>
+                    </section>
+
+                    <section class="col">
+                        <h2>Wireless Network</h2>
+
+                        <p>Different mobile devices, such as mobile notebook, smart phone and wireless sensors, are
+                            widely spread around the world. Therefore the needs of mobile application developments are increasing
+                            important. Consider the limitations of small mobile devices, mobile applications design may face more
+                            challenges</p>
+                    </section>
+                </div>
+
+                <a class="back-to-top" href="#home">Back to Top</a>
+
+            </section>
+
+            <!-- technical-skills -->
+            <section id="technical-skills" >
+
+                <h1>Technical Skills.</h1>
+
+                <div class="row no-bottom-margin">
+                    <section class="col">
+                        <h2>Programming</h2>
+
+                        <p><img class="align-left" alt="" src="images/services/webdesign.png" />
+                            Most frequently programming language I used to implement complex algorithms and suitable data structures 
+                            is <strong>Java</strong>, since I love coding in an object-oriented style. 
+                            I also code in <strong>C/C++</strong> sometimes, because they are much faster.
+                            After internship last summer, I found C# really handy and "sharp", so I begin to code in <strong>C#</strong> too.</p>
+                    </section>
+                    <section class="col mid">
+                        <h2>Database Management</h2>
+
+                        <p><img class="align-left" alt="" src="images/services/webdevelopment.png" />
+                            Big Data has become one of the most popular words. How to store and manipulate data is even more important.
+                            I am able to write query and debug complex store procedures <strong>SQL server, and MySQL</strong>.
+                            I also have some knowledges in <strong>postgreSQL, Oracle database, SQLite and MongoDB</strong>.
+                        </p>
+                    </section>
+
+                    <section class="col">
+                        <h2>Web App. Development</h2>
+
+                        <p><img class="align-left" alt="" src="images/services/seo-services.png" />
+                            HTML5, CSS3, JavaScript, JQuery, and Ajax are most fundamental skills to develop Web-based Application.
+                            Fortunately through my intern, I experience with Web application, Web Services, and Windows Services developments 
+                            using Visual Studio 2010 and 2012 in C# with Silverlight, WPF, and .Net framework.
+                        </p>
+
+                    </section>
+                </div>
+
+                <div class="row">
+                    <section class="col">
+                        <h2>Web App. Development</h2>
+
+                        <p><img class="align-left" alt="" src="images/services/print-design.png" />
+                            During my course project, I have learnt how to develop a Web-based game application using <strong>Node.js</strong> framework.
+                            I am also interested in and learn how to develop Web Apps with <strong>J2EE, Spring, Hibernate and Struts</strong> Frameworks.
+                            In addition, I also tried out some Web application with Python (Django framework), PHP (Symfony, Drupal and Wordpress frameworks).</p>
+                    </section>
+                    <section class="col mid">
+                        <h2>Mobile Application Development</h2>
+
+                        <p><img class="align-left" alt="" src="images/services/logo-design-and-branding.png" />
+                            No doubt mobile devices have become more and more popular and powerful. One of my current research interest is
+                            about how to make better use of these mobile network. By implementing agile software development process, with 
+                            two other teammates, I have developed an Android Mobile Application for Charlotte Nature Museum using <strong>Java with Eclipse</strong>.</p>
+                    </section>
+
+                    <section class="col">
+                        <h2>Other general skills</h2>
+
+                        <p><img class="align-left" alt="" src="images/services/newsletter.png" />
+                            I am familiar with <strong>Linux (Ubuntu) and Windows (XP, 2007 and 2008)</strong>.
+                            In Linux, shell scripting is a powerful tool to get a batch of jobs done conveniently.
+                            Good version control can help organize programs and maintain code history. 
+                            I like to use <strong>TortoiseSVN and GitHub</strong> in my regular work.
+                        </p>
+
+                    </section>
+                </div>
+
+                <a class="back-to-top" href="#home">Back to Top</a>
+
+            </section>
+
+            <!-- featured works -->
+            <section id="experience">
+
+                <h1>Featured works.</h1>
+
+                <ul class="folio-list clearfix">
+
+                    <li class="folio-thumb">
+                        <div class="thumb">
+                            <a class="lightbox" href="images/thumbs/big/ABCNMEbig.png" title="Android Mobile App" ><img src="images/thumbs/ABCNME.png" alt="" /> </a>
+                        </div>
+                        <h3 class="entry-title">Android Mobile Application</h3>
+                    </li>
+
+                    <li class="folio-thumb last">
+                        <div class="thumb">
+                            <a class="lightbox" href="images/thumbs/big/threeofacrimebig.png" title="Node.js Web App"><img src="images/thumbs/threeofacrime.png" alt="" /> </a>
+                        </div>
+                        <h3 class="entry-title">Node.js Web App</h3>
+                    </li>
+
+                    <li class="folio-thumb">
+                        <div class="thumb">
+                            <a class="lightbox-video" href="http://www.youtube.com/watch?v=9BYp6-8-T-w&feature=player_embedded"><img src="images/thumbs/silverlightApp.jpg" alt="" /></a>
+                        </div>
+                        <h3 class="entry-title">Aftermath (Sample Video)</h3>
+                    </li>
+                    <li class="folio-thumb">
+                        <div class="thumb">
+                            <a class="lightbox" href="images/thumbs/big/fatiguesoftwarebig.png" title="Fatigue prediction software" ><img src="images/thumbs/fatiguesoftware.png" alt="" /> </a>
+                        </div>
+                        <h3 class="entry-title">Software developed by Python</h3>
+                    </li>
+
+                    <li class="folio-thumb">
+                        <div class="thumb">
+                            <a class="lightbox" href="images/thumbs/big/bookstorebig.png" title="Book rental Web App"><img src="images/thumbs/bookstore.png" alt="" /> </a>
+                        </div>
+                        <h3 class="entry-title">ASP.net and SQL server</h3>
+                    </li>
+
+                    <li class="folio-thumb last">
+                        <div class="thumb">
+                            <a class="lightbox" href="images/thumbs/big/PhpWebsitebig.png" title="Demo Website"><img src="images/thumbs/PhpWebsite.png" alt="" /> </a>
+                        </div>
+                        <h3 class="entry-title">PHP and MySQL</h3>
+                    </li>                    
+
+                </ul>
+
+                <a class="back-to-top" href="#home">Back to Top</a>
+
+            </section>
+
+            <!-- about us -->
+            <section id="education" class="clearfix">
+
+                <h1>Experiences</h1>
+
+                <div class="primary">                    
+
+                    <ol>
+                        <li>
+                            <h2>Social-based routing protocol design</h2>
+                            <div>
+                                Aug. 2012 – present
+                                <ul>
+                                    <li>Designed routing protocol and collected data sets for simulation.</li>
+                                    <li>Wrote code using C and Java to simulate routing process.</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <h2>Web-based game application (Node.js)</h2>
+                            <div>
+                                Aug. 2013 ~ Nov. 2013
+                                <ul>
+                                    <li>Developed a Web-based Game Application (Three of a crime) using <strong>Node.js and MongoDB</strong>.</li>
+                                    <li>Figured out how to layout the web app architecture and algorithm implementation.</li>
+                                </ul>
+                            </div>                            
+                        </li>
+
+                        <li>
+                            <h2>Web-based electronic payment processing system development (Intern at Infoscore)</h2>
+                            <div>
+                                May 2013 ~ Aug. 2013
+                                <ul>
+                                    <li>Developed Windows Service to automatically check newly scanned and processed 
+                                        checks and statements in Database and update database information accordingly.</li>
+                                    <li>Added features to web services to automatically process 
+                                        different financial documents in different data centers.</li>
+                                    <li>Added features to refine Silverlight web pages to display current status nicely 
+                                        to facilitate users to process bad quality documents easier.</li>
+                                    <li>Scripted and debugged complex stored procedure and data layer to extract desired data from database.</li>
+                                </ul>
+                            </div>                            
+                        </li>
+
+                        <li>
+                            <h2>Book rental web-based application(C#, .Net)</h2>
+                            <div>
+                                Jan. 2013 ~ May. 2013
+                                <ul>
+                                    <li>Designed and developed a Web-based Application using C#, .Net framework and SQL server.</li>
+                                    <li>Database schema design and refinement, SQL query and stored procedure programming.</li>
+                                </ul>
+                            </div>                            
+                        </li>
+
+                        <li>
+                            <h2>Android mobile application for Charlotte Nature Museum Exploration</h2>
+                            <div>
+                                Aug. 2012 ~ Dec. 2012
+                                <ul>
+                                    <li>Develop an Android application using Java in an agile development process in a three-member team.</li>
+                                    <li>Investigated current status of Charlotte Nature Museum and users’ requirements; composed Documents;
+                                        Presented Demo in classroom; Finalize and refine final prototype.</li>
+                                </ul>
+                            </div>                            
+                        </li>
+
+                        <li>
+                            <h2>Aircraft service life assessment software development</h2>
+                            <div>
+                                April, 2011– March, 2012
+                                <ul>
+                                    <li>Study steel and composite materials’ fatigue behavior and derive theoretical model for simulation.</li>
+                                    <li>Design Graphic User Interface and wrote code using Python to calculate and plot results.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <aside>
+
+                    <h2>More about me</h2>
+
+                    <p>Please feel free to download my PDF version resume below:</p>
+
+                    <a href="/filestodownload/Resume.pdf" class="download-btn">Download Resume</a>
+
+                </aside>
+
+                <a class="back-to-top" href="#home">Back to Top</a>
+
+            </section>
+
+            <!-- Family -->
+            <section id="family" class="clearfix">      
+            </section>
+
+            <!-- more -->
+            <section id="more" class="clearfix">
+
+                <h1>Get in touch.</h1>
+
+                <div class="primary">
+
+                    <p class="intro">
+                        Hopefully, you like my web page and find any useful information for you.
+                        If you have any question regarding to this WebSite or any interest in my personal experiences, 
+                        or hiring me please feel free to contact me.
+                        Have a nice day!
+                    </p>                  
+
+                </div>
+
+                <aside>
+
+                    <h2>Contact Information</h2>
+
+                    <p>
+                        Computer Science Department<br>
+                        UNC Charlotte<br>
+                        9201 University City Blvd<br>
+                        Charlotte, NC 28223
+                    </p>
+
+                    <p>
+                        Phone: (704)877-1919 <br />
+                        Email: czhang25@uncc.edu
+                    </p>  
+
+                </aside>
+
+                <a class="back-to-top" href="#home">Back to Top</a>
+
+            </section>
+
+        </div>
+
+        <!-- footer -->
+        <footer>
+            <div class="footer-content">
+                <ul class="footer-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#technical-skills">Technical skills</a></li>
+                    <li><a href="#experience">Featured Works</a></li>
+                    <li><a href="#education">Experiences</a></li>                    
+                    <li><a href="#more">Contact Me</a></li>
+                </ul>
+
+                <p class="footer-text">Copyright 2013 Chao Zhang. &nbsp;&nbsp;&nbsp; Designed by Chao Zhang</p>
+            </div>
+
+        </footer>
+
+    </body>
 </html>
