@@ -169,6 +169,9 @@ Once you have ensured that the development web server hosting our application is
 and WebDriver is updated, you can run the end-to-end tests using the supplied npm script:
 
 ```
+Run following commomands in order:
+webdriver-manager start (Admin)
+npm start
 npm run protractor
 ```
 
