@@ -12,14 +12,14 @@ module.exports = function (grunt) {
         ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>;\n' +
         '  */\n',
         src: {
-            js: ['src/**/*.js', '!src/**/*test.js']
+            js: ['src/app/**/*.js', '!src/app/**/*test.js']
         },
         // configure jshint to validate js files -----------------------------------
         jshint: {
             options: {
                 reporter: require('jshint-stylish')
             },
-            all: ['Grunfile.js', 'src/**/*.js']
+            all: ['Grunfile.js', '<%= src.js %>']
         },
         clean: ['<%= distdir %>/*'],
         copy: {
@@ -86,6 +86,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
 
     // Default task(s).
-    grunt.registerTask('default', ['clean', 'copy', 'concat']);
+    grunt.registerTask('default', ['jshint', 'clean', 'copy', 'concat']);
 
 };

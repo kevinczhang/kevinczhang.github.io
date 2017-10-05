@@ -69,6 +69,7 @@ We have preconfigured the project with a simple development web server.  The sim
 this server is:
 
 ```
+grunt
 npm start
 ```
 
