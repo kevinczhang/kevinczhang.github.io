@@ -51,9 +51,13 @@ module.exports = function (grunt) {
                     process: true
                 }
             },
-            angular: {
-                src: ['node_modules/angular/angular.js', 'node_modules/angular-route/angular-route.js'],
-                dest: '<%= distdir %>/angular.js'
+            vendor: {
+                src: ['node_modules/jquery/dist/jquery.min.js',
+                'node_modules/angular/angular.js', 
+                'node_modules/angular-route/angular-route.js',
+                'node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js',
+                'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'],
+                dest: '<%= distdir %>/vendor.js'
             }
         },
         uglify: {
@@ -64,9 +68,9 @@ module.exports = function (grunt) {
                 src: ['<%= src.js %>'],
                 dest: '<%= distdir %>/app.js'
             },
-            angular: {
-                src: ['<%= concat.angular.src %>'],
-                dest: '<%= distdir %>/angular.js'
+            vendor: {
+                src: ['<%= concat.vendor.src %>'],
+                dest: '<%= distdir %>/vendor.js'
             }
         }
     });
