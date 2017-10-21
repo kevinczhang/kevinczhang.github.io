@@ -31,7 +31,7 @@ module.exports = function (grunt) {
             },
             assets: {
                 cwd: 'src/assets',  // set working folder / root to copy
-                src: '**/*.*',      // copy all files and subfolders **with ending .html**
+                src: ['**/**'],      // copy all files and subfolders **with ending .html**
                 dest: 'dist/assets',    // destination folder
                 expand: true           // required when using cwd
             }
