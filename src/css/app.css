@@ -116,6 +116,7 @@ a.dotted-link:hover {
 }
 .header .profile-image {
   margin-right: 30px;
+  width: 250px;
 }
 .header .profile-content .name {
   color: #49515a;

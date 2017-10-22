@@ -12,7 +12,8 @@ module.exports = function (grunt) {
         ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>;\n' +
         '  */\n',
         src: {
-            js: ['src/app/**/*.js', '!src/app/**/*test.js']
+            js: ['src/app/**/*.js', '!src/app/**/*test.js'],
+            css: ['src/css/**/*.css']
         },
         // configure jshint to validate js files -----------------------------------
         jshint: {
@@ -60,6 +61,10 @@ module.exports = function (grunt) {
                 'node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js',
                 'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'],
                 dest: '<%= distdir %>/vendor.js'
+            },
+            css: {
+                src: ['<%= src.css %>'],
+                dest: '<%= distdir %>/app.css'
             }
         },
         uglify: {
