@@ -9,6 +9,7 @@ var myApp = angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.home',
+  'myApp.about',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

@@ -9,7 +9,7 @@
     myApp.directive("siteHeader",function(){
         return {
             restrict: 'A',
-            templateUrl:'app/header/header.html'
+            templateUrl:'app/components/header/header.html'
         };
     });
 

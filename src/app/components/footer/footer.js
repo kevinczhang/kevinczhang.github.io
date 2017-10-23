@@ -9,7 +9,7 @@
     myApp.directive("siteFooter",function(){
         return {
             restrict: 'A',
-            templateUrl:'app/footer/footer.html'
+            templateUrl:'app/components/footer/footer.html'
         };
     });
 
