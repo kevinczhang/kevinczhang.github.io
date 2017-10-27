@@ -3,19 +3,19 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-            <a class="navbar-brand" href="#">Profile</a>
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ng-click="navCollapsed = !navCollapsed" href="#">Profile</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
             <ul class="nav navbar-nav">
-                <li><a href="#!/about">About</a></li>
-                <li><a href="#!/view1">Projects</a></li>                
+                <li><a href="#!/about" ng-click="navCollapsed = !navCollapsed">About</a></li>
+                <li><a href="#!/view1" ng-click="navCollapsed = !navCollapsed">Projects</a></li>                
             </ul>
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
@@ -28,7 +28,7 @@
                 <li uib-dropdown>
                     <a href uib-dropdown-toggle>Blogs <b class="caret"></b></a>
                     <ul class="dropdown-menu" uib-dropdown-menu role="menu">
-                        <li><a href="#">FrontEnd</a></li>
+                        <li><a href="#!/view1" ng-click="navCollapsed = !navCollapsed">FrontEnd</a></li>
                         <li><a href="#">BackEnd</a></li>
                         <li><a href="#">Mobile</a></li>
                         <li><a href="#">Database And Analysis</a></li>
