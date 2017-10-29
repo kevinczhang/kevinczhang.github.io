@@ -31,7 +31,17 @@
         assignNewIndexesToSlides(indexes);
       };
 
-      for (var i = 0; i < 4; i++) {
+      slides.push({
+          image: 'assets/images/NiceToMeetYou.png',
+          text: 'Nice to meet you!',
+          id: currIndex++
+        });
+      slides.push({
+          image: 'assets/images/projects.png',
+          text: 'My projects',
+          id: currIndex++
+        });
+      for (var i = 2; i < 4; i++) {
         $scope.addSlide();
       }
 
