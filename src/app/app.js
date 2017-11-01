@@ -6,7 +6,7 @@ var myApp = angular.module('myApp', [
   'ui.bootstrap',
   'myApp.header',
   'myApp.footer',
-  'myApp.view1',
+  'myApp.projects',
   'myApp.view2',
   'myApp.home',
   'myApp.about',
