@@ -3,3 +3,4 @@ node_modules/
 build/
 dist/
 .vscode/settings.json
+src/css/main.css

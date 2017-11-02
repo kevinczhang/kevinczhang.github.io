@@ -13,8 +13,8 @@ module.exports = function (grunt) {
         '  */\n',
         src: {
             js: ['src/app/**/*.js', '!src/app/**/*test.js'],
-            css: ['src/css/**/base.css', 'src/css/**/header.css', 'src/css/**/footer.css', 
-            'src/css/**/timeline.css', 'src/css/**/info-section.css', 'src/css/**/projects.css'] 
+            css: ['src/css/**/base.css', 'src/css/**/header.css', 'src/css/**/footer.css',
+                'src/css/**/timeline.css', 'src/css/**/info-section.css', 'src/css/**/projects.css']
         },
         // configure jshint to validate js files -----------------------------------
         jshint: {
@@ -24,6 +24,24 @@ module.exports = function (grunt) {
             all: ['Grunfile.js', '<%= src.js %>']
         },
         clean: ['<%= distdir %>/*'],
+        less: {
+            development: {
+                options: {
+                    compress: false,
+                    yuicompress: true,
+                    optimization: 2
+                },
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'src/less',
+                        src: ['*.less'],
+                        dest: 'src/css/',
+                        ext: '.css'
+                    }
+                ]
+            }
+        },
         copy: {
             html: {
                 cwd: 'src/app',  // set working folder / root to copy
@@ -55,12 +73,12 @@ module.exports = function (grunt) {
             },
             vendor: {
                 src: [
-                'node_modules/angular/angular.js', 
-                'node_modules/angular-route/angular-route.js',
-                'node_modules/angular-animate/angular-animate.js',
-                'node_modules/angular-sanitize/angular-sanitize.js',
-                'node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js',
-                'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'],
+                    'node_modules/angular/angular.js',
+                    'node_modules/angular-route/angular-route.js',
+                    'node_modules/angular-animate/angular-animate.js',
+                    'node_modules/angular-sanitize/angular-sanitize.js',
+                    'node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js',
+                    'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'],
                 dest: '<%= distdir %>/vendor.js'
             },
             css: {
@@ -80,6 +98,15 @@ module.exports = function (grunt) {
                 src: ['<%= concat.vendor.src %>'],
                 dest: '<%= distdir %>/vendor.js'
             }
+        },
+        watch: {
+            styles: {
+                files: ['src/less/**/*.less'], // which files to watch
+                tasks: ['less'],
+                options: {
+                    nospawn: true
+                }
+            }
         }
     });
 
@@ -98,6 +125,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
 
     // Default task(s).
-    grunt.registerTask('default', ['jshint', 'clean', 'copy', 'concat']);
+    grunt.registerTask('default', ['jshint', 'clean', 'less', 'copy', 'concat', 'watch']);
 
 };
