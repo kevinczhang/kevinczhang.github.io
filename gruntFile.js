@@ -125,6 +125,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
 
     // Default task(s).
-    grunt.registerTask('default', ['jshint', 'clean', 'less', 'copy', 'concat', 'watch']);
+    grunt.registerTask('default', ['jshint', 'clean', 'less', 'copy', 'concat']);
 
 };
