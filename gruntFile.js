@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         '  */\n',
         src: {
             js: ['src/app/**/*.js', '!src/app/**/*test.js'],
-            css: ['src/css/**/base.css', 'src/css/**/header.css', 'src/css/**/footer.css',
+            css: ['src/css/**/main.css','src/css/**/base.css', 'src/css/**/header.css', 'src/css/**/footer.css',
                 'src/css/**/timeline.css', 'src/css/**/info-section.css', 'src/css/**/projects.css']
         },
         // configure jshint to validate js files -----------------------------------
