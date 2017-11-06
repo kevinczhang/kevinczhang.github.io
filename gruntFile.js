@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         '  */\n',
         src: {
             js: ['src/app/**/*.js', '!src/app/**/*test.js'],
-            css: ['src/css/app.css']
+            css: ['src/assets/css/app.css']
         },
         // configure jshint to validate js files -----------------------------------
         jshint: {
@@ -35,7 +35,7 @@ module.exports = function (grunt) {
                         expand: true,
                         cwd: 'src/less',
                         src: ['*.less'],
-                        dest: 'src/css/',
+                        dest: 'src/assets/css/',
                         ext: '.css'
                     }
                 ]
@@ -79,10 +79,6 @@ module.exports = function (grunt) {
                     'node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js',
                     'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'],
                 dest: '<%= distdir %>/vendor.js'
-            },
-            css: {
-                src: ['<%= src.css %>'],
-                dest: '<%= distdir %>/app.css'
             }
         },
         uglify: {
