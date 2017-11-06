@@ -4,3 +4,4 @@ build/
 dist/
 .vscode/settings.json
 src/css/main.css
+src/assets/css/app.css
