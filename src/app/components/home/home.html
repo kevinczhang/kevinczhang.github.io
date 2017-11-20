@@ -1,42 +1,43 @@
 <div ng-controller="HomeCtrl as home">
-<!-- ******HEADER****** -->
-<header class="header">
-  <div class="container">
-    <img class="profile-image img-responsive pull-left" src="assets/images/myAvatar.svg" alt="James Lee" />
-    <div class="profile-content pull-left">
-      <h1 class="name">{{ home.fullName }}</h1>
-      <h2 class="title">{{ home.title }}</h2>
-      <ul class="social list-inline">
-        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="#"><i class="fa fa-github-alt"></i></a></li>
-        <li class="last-item"><a href="#"><i class="fa fa-hacker-news"></i></a></li>
-      </ul>
+  <!-- ******HEADER****** -->
+  <header class="header">
+    <div class="container">
+      <img class="profile-image img-responsive pull-left" ng-src="{{ home.myAvatar }}" alt="{{ home.fullName }}" />
+      <div class="profile-content pull-left">
+        <h1 class="name">{{ home.fullName }}</h1>
+        <h2 class="title">{{ home.title }}</h2>
+        <ul class="social list-inline">
+          <li ng-repeat="social in home.socials">
+            <a href="{{ social.link }}">
+              <i class="{{ social.icon }}"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--//profile-->
+      <a class="btn btn-cta-primary pull-right" ng-href="{{ home.contactMeUrl }}" target="_blank">
+        <i class="fa fa-paper-plane"></i> Contact Me
+      </a>
     </div>
-    <!--//profile-->
-    <a class="btn btn-cta-primary pull-right" href="http://themes.3rdwavemedia.com/" target="_blank"><i class="fa fa-paper-plane"></i> Contact Me</a>
-  </div>
-  <!--//container-->
-</header>
-<!--//header-->
+    <!--//container-->
+  </header>
+  <!--//header-->
 
-<div class="jumbotron">
-  <h2>About Me</h2>
-  <p>As a Software Engineer, I have amassed extensive experience in developing all kinds of Desktop, Web and Mobile Applications.
-    In addition, I am also involved in some research work on wireless networks. In general, I am self-motivated and love
-    to learn new cutting-edge technologies to broaden my horizon in different aspects. My past experience enabled me to prioritize
-    and remain focused on the essence of goals to be achieved, enhance my ability to learn new concepts quickly while working
-    under pressure to analyze and resolve complex issues. </p>
-  <p><a class="btn btn-primary btn-lg" href="#!/about" role="button">Learn more</a></p>
-</div>
+  <div class="jumbotron">
+    <h2>{{ home.aboutMeTitle }}</h2>
+    <p>{{ home.aboutMeContent }}</p>
+    <p>
+      <a class="btn btn-primary btn-lg" ng-href="{{ home.aboutUrl }}" role="button">
+        {{ home.aboutMeText }}
+      </a>
+    </p>
+  </div>
 
   <div style="height: 305px">
     <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
       <div uib-slide ng-repeat="slide in home.slides track by slide.id" index="slide.id">
-        <img ng-src="{{slide.image}}" style="margin:auto;">
-        <div class="carousel-caption">
-        </div>
+        <img ng-src="{{ slide.image }}" style="margin:auto;">
+        <div class="carousel-caption"></div>
       </div>
     </div>
   </div>

@@ -1,153 +1,80 @@
-<div class="container">
+<div class="container" ng-controller="AboutCtrl as about">
     <div class="row">
         <div class="col-lg-6 well info">
-                <ul class="list-unstyled">
-                    <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span>San Francisco, US</li>
-                    <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><a href="#">jameslee@website.com</a></li>
-                    <li><i class="fa fa-link"></i><span class="sr-only">Website:</span><a href="#">http://www.website.com</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-6 well info">
-                <ul class="list-unstyled">
-                    <h4>Education</h4>
-                    <li><i class="fa fa-graduation-cap"></i><span>MS in Computer Science</span><i class="university">University College London <span class="year">(2011-2012)</span></i></li>
-                    <li><i class="fa fa-graduation-cap"></i><span>PhD in Civil Engineering</span><i class="university">University College London <span class="year">(2011-2012)</span></i></li>
-                </ul>
-            </div>
-            <div class="well skills aside section col-lg-12">
-                    <div class="section-inner">
-                        <h2 class="heading">Skills</h2>
-                        <div class="content">
-                            <p class="intro">
-                                Intro about your skills goes here. Keep the list lean and only show your primary skillset. You can always provide a link to your Linkedin or Coderwall profile so people can get more info there.</p>
-                            
-                            <div class="skillset">
-                               
-                                <div class="item">
-                                    <h3 class="level-title">Python &amp; Django<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="" data-original-title="You can use the tooltip to add more info...">Expert</span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="96%" style="width: 96%;">
-                                        </div>                                      
-                                    </div><!--//level-bar-->                                 
-                                </div><!--//item-->
-                                
-                                <div class="item">
-                                    <h3 class="level-title">Javascript &amp; jQuery<span class="level-label" data-original-title="" title="">Expert</span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="96%" style="width: 96%;">
-                                        </div>                                      
-                                    </div><!--//level-bar-->                                 
-                                </div><!--//item-->
-                                
-                                <div class="item">
-                                    <h3 class="level-title">HTML5, CSS3, SASS &amp; LESS<span class="level-label" data-original-title="" title="">Expert</span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="96%" style="width: 96%;">
-                                        </div>                                      
-                                    </div><!--//level-bar-->                                 
-                                </div><!--//item-->
-                                
-                                <div class="item">
-                                    <h3 class="level-title">Ruby on Rails<span class="level-label" data-original-title="" title="">Pro</span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="85%" style="width: 85%;">
-                                        </div>                                      
-                                    </div><!--//level-bar-->                                 
-                                </div><!--//item-->
-                                
-                                <p><a class="more-link" href="#"><i class="fa fa-external-link"></i> More on Coderwall</a></p> 
-                            </div>              
-                        </div><!--//content-->  
-                    </div><!--//section-inner-->                 
-                </div>
+            <h4>{{ about.contactTitle }}</h4>
+            <ul class="list-unstyled">
+                <li ng-repeat="contact in about.contacts">
+                    <i class="{{ contact.iconClass }}"></i>
+                    <span class="sr-only">{{ contact.contactSrOnlyText }}</span>
+                    <a href=" {{ contact.contactLink }} ">{{ contact.contactLinkText }}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-6 well info">
+            <ul class="list-unstyled">
+                <h4>{{ about.educationTitle }}</h4>
+                <li ng-repeat="education in about.educations">
+                    <i class="fa fa-graduation-cap"></i>
+                    <span>{{ education.degreeAndMajor }}</span>
+                    <i class="university">
+                        {{ education.university }} <span class="year">{{ education.year }}</span>
+                    </i>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="row">        
+    <div class="row">
+        <div class="well skills aside section col-lg-12">
+            <div class="section-inner">
+                <h2 class="heading">
+                    {{ about.skillsTitle }}
+                </h2>
+                <div class="content">
+                    <p class="intro">
+                        {{ about.skillsContent }}
+                    </p>
+                    <div class="skillset">
+                        <div class="item" ng-repeat="skill in about.skills">
+                            <h3 class="level-title">
+                                {{ skill.skillName }}<span class="level-label">{{ skill.skillLevel }}</span>
+                            </h3>
+                            <div class="level-bar">
+                                <div class="level-bar-inner" data-level="{{ skill.skillWidth }}" ng-style="{{ skill.skillWidthStyle }}"></div>
+                            </div>
+                            <!--//level-bar-->
+                        </div>
+                        <!--//item-->
+                    </div>
+                </div>
+                <!--//content-->
+            </div>
+            <!--//section-inner-->
+        </div>
+    </div>
+    <div class="row">
         <div class="well col-lg-12">
-            <h2 class="heading">Work Experience</h2>
+            <h2 class="heading">{{ about.workExperienceTitle }}</h2>
             <ul class="timeline">
-                <li>
-                    <div class="timeline-panel-left">
+                <li ng-repeat="job in about.jobs">
+                    <div class="timeline-panel-left" ng-if="job.jobYearLeft != ''">
                         <div class="timeline-heading">
-                            <h4>2009-2011</h4>
-                            <h4 class="subheading">Our Humble Beginnings</h4>
+                            <h4>{{ job.jobYearLeft }}</h4>
+                            <h4 class="subheading">{{ job.jobTitleLeft }}</h4>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam
-                                reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
-                                laudantium consectetur!</p>
+                            <p class="text-muted">{{ job.jobContentLeft }}</p>
                         </div>
                     </div>
                     <div class="timeline-image">
-                        <img class="rounded-circle img-circle" src="assets/images/about/1.png" alt="">
+                        <img class="rounded-circle img-circle" ng-src="{{ job.jobImage }}" alt="">
                     </div>
-                    <div class="timeline-panel-right">
+                    <div class="timeline-panel-right" ng-if="job.jobYearRight != ''">
                         <div class="timeline-heading">
-                            <h4>2009-2011</h4>
-                            <h4 class="subheading">Our Humble Beginnings</h4>
+                            <h4>{{ job.jobYearRight }}</h4>
+                            <h4 class="subheading">{{ job.jobTitleRight }}</h4>
                         </div>
                         <div class="timeline-body-projects">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam
-                                reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
-                                laudantium consectetur!</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="timeline-panel-left">
-                        <div class="timeline-heading">
-                            <h4>March 2011</h4>
-                            <h4 class="subheading">An Agency is Born</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam
-                                reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
-                                laudantium consectetur!</p>
-                        </div>
-                    </div>
-                    <div class="timeline-image">
-                        <img class="rounded-circle img-circle" src="assets/images/about/2.png" alt="">
-                    </div>                    
-                    <div class="timeline-panel-right">
-                        <div class="timeline-heading">
-                            <h4>2009-2011</h4>
-                            <h4 class="subheading">Our Humble Beginnings</h4>
-                        </div>
-                        <div class="timeline-body-projects-inverted">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam
-                                reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
-                                laudantium consectetur!</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="timeline-image">
-                        <img class="rounded-circle img-circle" src="assets/images/about/3.png" alt="">
-                    </div>
-                    <div class="timeline-panel-right">
-                        <div class="timeline-heading">
-                            <h4>December 2012</h4>
-                            <h4 class="subheading">Transition to Full Service</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam
-                                reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
-                                laudantium consectetur!</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="timeline-image">
-                        <img class="rounded-circle img-circle" src="assets/images/about/4.png" alt="">
-                    </div>
-                    <div class="timeline-panel-right">
-                        <div class="timeline-heading">
-                            <h4>July 2014</h4>
-                            <h4 class="subheading">Phase Two Expansion</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam
-                                reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore
-                                laudantium consectetur!</p>
+                            <p class="text-muted">{{ job.jobContentRight }}</p>
                         </div>
                     </div>
                 </li>
